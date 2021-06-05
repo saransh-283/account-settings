@@ -1,0 +1,12 @@
+#topbar{
+	display: flex;
+	background: #50DB50;
+	justify-content: space-between;
+	align-items: center;
+	padding: .5rem
+}
+
+img{
+	width: 2rem;
+}
+
