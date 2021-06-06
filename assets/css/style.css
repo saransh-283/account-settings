@@ -1,45 +1,143 @@
 body {
-	height: 100vh
+    height: 100vh;
+}
+
+#content {
+    padding: 3.1rem 0 0 0;
 }
 
 #topbar {
-	display: flex;
-	background: #50DB50;
-	justify-content: space-between;
-	align-items: center;
-	padding: .5rem
+    display: flex;
+    background: #50DB50;
+    justify-content: space-between;
+    align-items: center;
+    padding: .5rem;
+    width: 100%;
+    z-index: 10;
+    position: fixed;
 }
 
-#top-head {
-	font-size: 1.5rem;
-	display: flex
+.top-head {
+    font-size: 1.5rem;
+    display: flex
 }
 
-img {
-	width: 2rem;
+#topbar img {
+    width: 2rem;
 }
 
-#sidebar{
-	height: 100%;
-	width: max-content;
-	background: #63E8A8;
-	padding: 1rem 2rem;
+#sidebar-open {
+    transition: transform .3s;
 }
 
-#sidebar ul{
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
+#sidebar {
+    position: fixed;
+    height: 100%;
+    width: max-content;
+    background: #63E8A8;
+    padding: 1rem 4rem;
+    transform: translate(0);
 }
 
-#sidebar li{
-	padding: .5rem .1rem;
-	transition: color .3s;
-	color: #F6F6F6
+#sidebar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 
-#sidebar li:hover{
-	border-bottom: 3px solid #2DB171;
-	color: #C7C7C7;
-	cursor: pointer;
+#sidebar li {
+    padding: .5rem .1rem;
+    transition: color .3s;
+    color: #F6F6F6
+}
+
+#sidebar li:hover,
+.active {
+    border-bottom: 3px solid #2DB171;
+    color: #C7C7C7;
+    cursor: pointer;
+}
+
+#content-main {
+    background: url('../img/background-spot.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 2rem;
+    transition: filter .3s;
+}
+
+.change:hover {
+    cursor: pointer;
+}
+
+#picture-row {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 2rem;
+}
+
+section {
+    margin-left: 16.2rem;
+    display: none;
+}
+
+.sec-cont {
+    display: flex;
+    flex-direction: column;
+}
+
+.sec-row {
+    padding: .5rem 0;
+    display: flex;
+}
+
+.sec-head {
+    padding: 1rem;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 1rem;
+}
+
+.change {
+    margin-left: 1rem;
+}
+
+#details {
+    display: block;
+}
+
+#profile-pic {
+    width: 15rem;
+}
+
+#profile-edit {
+    position: absolute;
+    bottom: 1.3rem;
+    right: 0;
+}
+
+#picture {
+    width: min-content;
+    border-radius: 50%;
+    position: relative;
+}
+
+
+
+
+
+
+
+
+
+
+#personalise {
+    background: green;
+    height: 100px;
+}
+
+#info {
+    background: orange;
+    height: 100px;
 }
