@@ -1,4 +1,8 @@
-#topbar{
+body {
+	height: 100vh
+}
+
+#topbar {
 	display: flex;
 	background: #50DB50;
 	justify-content: space-between;
@@ -6,7 +10,36 @@
 	padding: .5rem
 }
 
-img{
+#top-head {
+	font-size: 1.5rem;
+	display: flex
+}
+
+img {
 	width: 2rem;
 }
 
+#sidebar{
+	height: 100%;
+	width: max-content;
+	background: #63E8A8;
+	padding: 1rem 2rem;
+}
+
+#sidebar ul{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+#sidebar li{
+	padding: .5rem .1rem;
+	transition: color .3s;
+	color: #F6F6F6
+}
+
+#sidebar li:hover{
+	border-bottom: 3px solid #2DB171;
+	color: #C7C7C7;
+	cursor: pointer;
+}

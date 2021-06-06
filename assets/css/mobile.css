@@ -1,5 +1,14 @@
-@media (max-width: 768px){
-	#top-profile, #settings-label{
+@media (max-width: 768px) {
+
+	#top-profile,
+	#settings-label {
 		display: none
 	}
+
+
+	.rotate:hover {
+		transform: rotateZ(90deg);
+	}
+	
+	
 }
