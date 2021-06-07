@@ -65,8 +65,9 @@ body {
     background: url('../img/background-spot.png');
     background-size: cover;
     background-repeat: no-repeat;
-    padding: 2rem;
     transition: filter .3s;
+    margin: 0 0 0 19.4rem;
+    padding: 2rem 4rem;
 }
 
 .change:hover {
@@ -80,7 +81,6 @@ body {
 }
 
 section {
-    margin-left: 16.2rem;
     display: none;
 }
 
@@ -182,19 +182,12 @@ section {
     width: 13rem;
     overflow: scroll;
     display: none;
+    background: #f8f8ff;
 }
 
 #active-font {
     font-family: 'Arimo';
 }
-
-
-
-
-
-
-
-
 
 #info {
     background: orange;

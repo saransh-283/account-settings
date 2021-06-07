@@ -8,15 +8,16 @@ var bodySize = body.getBoundingClientRect()
 
 var open = false
 var fonts = false
+var icon = false
 var currentFont
 
 if (bodySize.width < 768) {
     function toggleSide() {
         if (open) {
-            toggle.style.transform = 'rotate(0)'
+            document.getElementById('sidebar-open').classList.remove('open')
             sidebar.style.transform = "translate(300px)"
         } else {
-            toggle.style.transform = 'rotate(90deg)'
+            document.getElementById('sidebar-open').classList.add('open')
             sidebar.style.transform = "translate(0)"
         }
         open = !open
@@ -36,10 +37,10 @@ document.body.onresize = () => {
     if (bodySize.width < 768) {
         function toggleSide() {
             if (open) {
-                toggle.style.transform = 'rotate(0)'
+                document.getElementById('sidebar-open').classList.remove('open')
                 sidebar.style.transform = "translate(300px)"
             } else {
-                toggle.style.transform = 'rotate(90deg)'
+                document.getElementById('sidebar-open').classList.add('open')
                 sidebar.style.transform = "translate(0)"
             }
             open = !open
@@ -67,6 +68,15 @@ function chooseFont(event) {
     activeFont.style.fontFamily = currentFont
     activeFont.innerHTML = currentFont
     body.style.fontFamily = currentFont
+}
+
+function navAnim() {
+    if (icon) {
+        document.getElementById('sidebar-open').classList.remove('open')
+    } else {
+        document.getElementById('sidebar-open').classList.add('open')
+    }
+    icon = !icon
 }
 
 Array.from(document.getElementsByClassName('font')).map(elem => elem.addEventListener('click', chooseFont))
