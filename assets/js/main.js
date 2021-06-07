@@ -2,10 +2,13 @@ const body = document.body
 const toggle = document.getElementById('sidebar-open')
 const sidebar = document.getElementById('sidebar')
 const main = document.getElementById('content-main')
+const activeFont = document.getElementById('active-font')
 
 var bodySize = body.getBoundingClientRect()
 
 var open = false
+var fonts = false
+var currentFont
 
 if (bodySize.width < 768) {
     function toggleSide() {
@@ -35,15 +38,39 @@ document.body.onresize = () => {
             if (open) {
                 toggle.style.transform = 'rotate(0)'
                 sidebar.style.transform = "translate(300px)"
-                main.style.filter = 'brightness(1)'
             } else {
                 toggle.style.transform = 'rotate(90deg)'
                 sidebar.style.transform = "translate(0)"
-                main.style.filter = 'brightness(0.8)'
             }
             open = !open
         }
     }
 }
 
+function fontsDisplay() {
+    document.getElementById('font-list').style.display = 'block'
+}
+
+function fontsDisplay() {
+    if (fonts) {
+        document.getElementById('font-list').style.display = 'none'
+    } else {
+        document.getElementById('font-list').style.display = 'block'
+    }
+    fonts = !fonts
+}
+
+function chooseFont(event) {
+    document.getElementById('font-list').style.display = 'none'
+    fonts = false
+    currentFont = event.target.innerHTML
+    activeFont.style.fontFamily = currentFont
+    activeFont.innerHTML = currentFont
+    body.style.fontFamily = currentFont
+}
+
+Array.from(document.getElementsByClassName('font')).map(elem => elem.addEventListener('click', chooseFont))
+
 Array.from(document.getElementsByClassName('side-item')).map(elem => elem.addEventListener('click', toggleFunc))
+
+Array.from(document.getElementsByClassName('font')).map(elem => elem.style.fontFamily = `${elem.getAttribute('data-font')}`)

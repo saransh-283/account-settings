@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="assets/img/logo.png" type="image/gif" sizes="16x16">
+
     <!-- cdns -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
@@ -13,6 +14,7 @@
     <script src="https://kit.fontawesome.com/f260a15132.js" crossorigin="anonymous"></script>
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Arimo&family=Baloo+Tammudu+2&family=Barlow&family=Bodoni+Moda&family=Dosis&family=Fira+Sans&family=Heebo&family=Hind+Siliguri&family=Inter&family=Josefin+Sans&family=Karla&family=Lato&family=Libre+Franklin&family=Limelight&family=Lora&family=Mate&family=Mate+SC&family=Merriweather&family=Montserrat&family=Nanum+Gothic&family=Noto+Sans+JP&family=Nunito+Sans&family=Odibee+Sans&family=Open+Sans&family=Oswald&family=Oxygen&family=PT+Sans&family=PT+Serif&family=Playfair+Display&family=Quicksand&family=Raleway&family=Roboto&family=Rubik&family=Signika+Negative&family=Source+Sans+Pro&family=Staatliches&family=Stint+Ultra+Condensed&family=Titillium+Web&family=Ubuntu&family=Work+Sans&display=swap" rel="stylesheet">
     <!-- local dependencies -->
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/mobile.css">
@@ -24,11 +26,13 @@
         <div id="logo">
             <img src="assets/img/logo.png">
         </div>
-        <div class="top-head">
+        <div>
             <div id="settings-label">Settings</div>
         </div>
-        <div class="top-head">
-            <div onclick="toggleSide()" id="sidebar-open" class="rotate"><i class="fa fa-gear"></i></div>
+        <div id="icon">
+            <div onclick="toggleSide()" id="sidebar-open">
+                <i class="fa fa-cog"></i>
+            </div>
         </div>
     </div>
     <div id="content">
@@ -45,7 +49,7 @@
                     <div id="picture-row">
                         <div class="sec-row" id="picture">
                             <img src="assets/img/avatar.jpg" alt="" id="profile-pic">
-                            <div id="profile-edit"><i class="fa fa-edit"></i></div>
+                            <div class="change" id="profile-edit"><i class="fa fa-edit"></i></div>
                         </div>
                     </div>
                     <div class="sec-head">Details</div>
@@ -125,7 +129,162 @@
                 </div>
             </section>
             <section id="personalise">
+                <div class="sec-cont">
+                    <div class="sec-head">Colors</div>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="sec-label">Theme</td>
+                                <td class="sec-row">
+                                    <div class="theme active-theme" id="auto"></div>
+                                    <div class="theme" id="light"></div>
+                                    <div class="theme" id="dark"></div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <hr>
+                    <div class="sec-head">Text</div>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="sec-label">Font</td>
+                                <td class="sec-row">
+                                    <!--<select name="font" id="font">
+                                        
+                                    </select>-->
 
+                                    <div id="font-select">
+                                        <span id="select-click" onclick="fontsDisplay()">
+                                            <div id="active-font">Arimo</div>
+                                            <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                        </span>
+                                        <div id="font-list">
+                                            <div class="font" id="Arimo" data-font="Arimo">
+                                                Arimo
+                                            </div>
+                                            <div class="font" id="BalooTammudu2" data-font="Baloo Tammudu 2">
+                                                Baloo Tammudu 2
+                                            </div>
+                                            <div class="font" id="Barlow" data-font="Barlow">
+                                                Barlow
+                                            </div>
+                                            <div class="font" id="BodoniModa" data-font="Bodoni Moda">
+                                                Bodoni Moda
+                                            </div>
+                                            <div class="font" id="Dosis" data-font="Dosis">
+                                                Dosis
+                                            </div>
+                                            <div class="font" id="FiraSans" data-font="Fira Sans">
+                                                Fira Sans
+                                            </div>
+                                            <div class="font" id="Heebo" data-font="Heebo">
+                                                Heebo
+                                            </div>
+                                            <div class="font" id="HindSiliguri" data-font="Hind Siliguri">
+                                                Hind Siliguri
+                                            </div>
+                                            <div class="font" id="Inter" data-font="Inter">
+                                                Inter
+                                            </div>
+                                            <div class="font" id="JosefinSans" data-font="Josefin Sans">
+                                                Josefin Sans
+                                            </div>
+                                            <div class="font" id="Karla" data-font="Karla">
+                                                Karla
+                                            </div>
+                                            <div class="font" id="Lato" data-font="Lato">
+                                                Lato
+                                            </div>
+                                            <div class="font" id="Libre Franklin" data-font="Libre Franklin">
+                                                Libre Franklin
+                                            </div>
+                                            <div class="font" id="Limelight" data-font="Limelight">
+                                                Limelight
+                                            </div>
+                                            <div class="font" id="Lora" data-font="Lora">
+                                                Lora
+                                            </div>
+                                            <div class="font" id="Mate" data-font="Mate">
+                                                Mate
+                                            </div>
+                                            <div class="font" id="Merriweather" data-font="Merriweather">
+                                                Merriweather
+                                            </div>
+                                            <div class="font" id="Montserrat" data-font="Montserrat">
+                                                Montserrat
+                                            </div>
+                                            <div class="font" id="NanumGothic" data-font="Nanum Gothic">
+                                                Nanum Gothic
+                                            </div>
+                                            <div class="font" id="NotoSansJP" data-font="Noto Sans JP">
+                                                Noto Sans JP
+                                            </div>
+                                            <div class="font" id="NunitoSans" data-font="Nunito Sans">
+                                                Nunito Sans
+                                            </div>
+                                            <div class="font" id="OdibeeSans" data-font="Odibee Sans">
+                                                Odibee Sans
+                                            </div>
+                                            <div class="font" id="OpenSans" data-font="Open Sans">
+                                                Open Sans
+                                            </div>
+                                            <div class="font" id="Oswald" data-font="Oswald">
+                                                Oswald
+                                            </div>
+                                            <div class="font" id="Oxygen" data-font="Oxygen">
+                                                Oxygen
+                                            </div>
+                                            <div class="font" id="PTSans" data-font="PT Sans">
+                                                PT Sans
+                                            </div>
+                                            <div class="font" id="PTSerif" data-font="PT Serif">
+                                                PT Serif
+                                            </div>
+                                            <div class="font" id="PlayfairDisplay" data-font="Playfair Display">
+                                                Playfair Display
+                                            </div>
+                                            <div class="font" id="Quicksand" data-font="Quicksand">
+                                                Quicksand
+                                            </div>
+                                            <div class="font" id="Raleway" data-font="Raleway">
+                                                Raleway
+                                            </div>
+                                            <div class="font" id="Roboto" data-font="Roboto">
+                                                Roboto
+                                            </div>
+                                            <div class="font" id="Rubik" data-font="Rubik">
+                                                Rubik
+                                            </div>
+                                            <div class="font" id="SignikaNegative" data-font="Signika Negative">
+                                                Signika Negative
+                                            </div>
+                                            <div class="font" id="SourceSansPro" data-font="Source Sans Pro">
+                                                Source Sans Pro
+                                            </div>
+                                            <div class="font" id="Staatliches" data-font="Staatliches">
+                                                Staatliches
+                                            </div>
+                                            <div class="font" id="StintUltraCondensed" data-font="Stint Ultra Condensed">
+                                                Stint Ultra Condensed
+                                            </div>
+                                            <div class="font" id="TitilliumWeb" data-font="Titillium Web">
+                                                Titillium Web
+                                            </div>
+                                            <div class="font" id="Ubuntu" data-font="Ubuntu">
+                                                Ubuntu
+                                            </div>
+                                            <div class="font" id="WorkSans" data-font="Work Sans">
+                                                Work Sans
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </section>
             <section id="info">
 

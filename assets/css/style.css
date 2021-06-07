@@ -1,9 +1,10 @@
 body {
     height: 100vh;
+    font-family: 'Arimo';
 }
 
 #content {
-    padding: 3.1rem 0 0 0;
+    padding: 4rem 0 0 0;
 }
 
 #topbar {
@@ -17,17 +18,19 @@ body {
     position: fixed;
 }
 
-.top-head {
-    font-size: 1.5rem;
+#settings-label {
+    font-size: 2rem;
     display: flex
 }
 
 #topbar img {
-    width: 2rem;
+    width: 3rem;
 }
 
 #sidebar-open {
     transition: transform .3s;
+    font-size: 1.5rem;
+    display: none;
 }
 
 #sidebar {
@@ -91,6 +94,10 @@ section {
     display: flex;
 }
 
+.sec-row div {
+    margin: .5rem;
+}
+
 .sec-head {
     padding: 1rem;
     text-align: center;
@@ -123,19 +130,71 @@ section {
     position: relative;
 }
 
-
-
-
-
-
-
-
-
-
-#personalise {
-    background: green;
-    height: 100px;
+.theme {
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    border: 1px solid rgb(34, 34, 34);
 }
+
+#auto {}
+
+#light {
+    background: rgb(219, 219, 219);
+}
+
+#dark {
+    background: rgb(34, 34, 34);
+}
+
+#select-click {
+    border-bottom: 1px solid #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: .2rem;
+}
+
+#select-click:hover {
+    cursor: pointer;
+}
+
+#font-select {
+    position: relative;
+    width: 13rem;
+    padding: .2rem;
+}
+
+.font {
+    margin: 0;
+    padding: .5rem;
+}
+
+.font:hover {
+    background: rgb(96, 133, 255);
+    cursor: pointer;
+}
+
+#font-list {
+    position: absolute;
+    margin: .5rem 0 0 0;
+    height: 13rem;
+    width: 13rem;
+    overflow: scroll;
+    display: none;
+}
+
+#active-font {
+    font-family: 'Arimo';
+}
+
+
+
+
+
+
+
+
 
 #info {
     background: orange;

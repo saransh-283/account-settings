@@ -4,6 +4,19 @@
         display: none
     }
 
+    #sidebar-open {
+        display: block;
+    }
+
+    #topbar img {
+        width: 2rem;
+    }
+
+    #content {
+        padding: 3.1rem 0 0 0;
+    }
+
+
 
     #sidebar {
         right: 0;
