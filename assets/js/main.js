@@ -12,11 +12,9 @@ if (bodySize.width < 768) {
         if (open) {
             toggle.style.transform = 'rotate(0)'
             sidebar.style.transform = "translate(300px)"
-            main.style.filter = 'brightness(1)'
         } else {
             toggle.style.transform = 'rotate(90deg)'
             sidebar.style.transform = "translate(0)"
-            main.style.filter = 'brightness(0.8)'
         }
         open = !open
     }
