@@ -31,6 +31,10 @@ function toggleFunc(event) {
     document.getElementById(event.target.getAttribute('data-toggle')).style.display = 'block'
 }
 
+Array.from(document.getElementsByTagName('section')).map(elem => elem.style.display = 'none')
+document.getElementById('details').style.display='block'
+//document.getElementById(document.getElementsByClassName('active')[0].getAttribute('data-toggle')).style.display = 'block'
+
 document.body.onresize = () => {
     bodySize = body.getBoundingClientRect()
 

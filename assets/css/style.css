@@ -80,10 +80,6 @@ body {
     margin-bottom: 2rem;
 }
 
-section {
-    display: none;
-}
-
 .sec-cont {
     display: flex;
     flex-direction: column;
