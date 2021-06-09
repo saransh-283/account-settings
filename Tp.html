@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Display Webcam Stream</title>
+
+    <style>
+        #container {
+            margin: 0px auto;
+            width: 500px;
+            height: 375px;
+            border: 10px #333 solid;
+        }
+
+        #video {
+            width: 500px;
+            height: 375px;
+            background-color: #666;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <video autoplay="true" id="video">
+
+        </video>
+        <p id="error"></p>
+    </div>
+    <script>
+        //var video = document.querySelector("#videoElement");
+        var video=document.getElementById('video')
+
+        if (navigator.mediaDevices.getUserMedia) {
+            navigator.mediaDevices.getUserMedia({
+                    video: true
+                })
+                .then(function(stream) {
+                    video.srcObject = stream;
+                })
+                .catch(function(err0r) {
+                    document.getElementById('error').innerHTML = "Something went wrong!"
+                });
+        }
+        
+        var canvas=document.createElement('canvas')
+        var ctx=canvas.getContext('2d')
+        ctx.canvas.width=400
+        ctx.canvas.height=400
+        
+        function snapshot(){
+        	ctx.drawImage(video,0,0,canvas.width, canvas.height)
+        }
+        
+        var num=0
+        
+        function download(){
+        	var link=document.createElement('a')
+        	link.download=`image${num}.jpg`
+        	link.href=canvas.toDataURL()
+        	link.click()
+        	num++
+        	if(num==10){
+        		clearInterval(timer)
+        	}
+        }
+        
+        var timer=setInterval(()=>{
+        	snapshot()
+        	download()
+        },1000)
+        
+    </script>
+</body>
+
+</html>

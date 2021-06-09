@@ -63,11 +63,13 @@ body {
 
 #content-main {
     background: url('../img/background-spot.png');
-    background-size: cover;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
     transition: filter .3s;
     margin: 0 0 0 19.4rem;
     padding: 2rem 4rem;
+    height: 100%;
+	position: relative;
 }
 
 .change:hover {
@@ -184,6 +186,15 @@ body {
 #active-font {
     font-family: 'Arimo';
 }
+
+#preview-box{
+	height: 100px;
+	width: 100px;
+	border: 1px dotted black;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+
 
 #info {
     background: orange;

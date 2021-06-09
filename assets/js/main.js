@@ -29,6 +29,7 @@ function toggleFunc(event) {
     document.getElementsByClassName('active')[0].classList.remove('active')
     event.target.classList.add('active')
     document.getElementById(event.target.getAttribute('data-toggle')).style.display = 'block'
+    toggleSide()
 }
 
 Array.from(document.getElementsByTagName('section')).map(elem => elem.style.display = 'none')
@@ -88,3 +89,23 @@ Array.from(document.getElementsByClassName('font')).map(elem => elem.addEventLis
 Array.from(document.getElementsByClassName('side-item')).map(elem => elem.addEventListener('click', toggleFunc))
 
 Array.from(document.getElementsByClassName('font')).map(elem => elem.style.fontFamily = `${elem.getAttribute('data-font')}`)
+
+const frame = document.getElementById('preview-box');
+
+const url=document.getElementById('url')
+
+function urlImage(event){
+	frame.style.backgroundImage=`url(${event.target.value})`
+}
+
+url.addEventListener('change', urlImage)
+
+const file = document.getElementById('file');
+const reader = new FileReader();
+reader.addEventListener("load", function () {
+  frame.style.backgroundImage = `url(${ reader.result })`;
+}, false);
+file.addEventListener('change',function() {
+  const image = this.files[0];
+  if(image) reader.readAsDataURL(image);
+}, false)
